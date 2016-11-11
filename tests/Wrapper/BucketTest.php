@@ -55,4 +55,10 @@ class BucketTest extends PHPUnit_Framework_TestCase
         $this->setExpectedException('Aws\S3\Exception\AccessDeniedException');
         $this->bucket->upload($this->file);
     }
+
+    public function testKeyRegex()
+    {
+        $s3_bucket = new Bucket(null, null, null, null);
+        $s3_bucket = new Bucket('AKIAIOSFODNN7EXAMPLE', 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY', 'SomeBucket');
+    }
 }
